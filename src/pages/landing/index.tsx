@@ -1,0 +1,34 @@
+import HeroLogo from "@/assets/hero.svg";
+import { Button } from "@/components/ui/button";
+import { MessageSquare } from "lucide-react";
+
+const Landing = () => {
+  return (
+    <div className=" relative">
+      <section className=" max-w-6xl mx-auto h-screen flex items-center relative z-30 overflow-hidden ">
+        <div className="space-y-10">
+          <h1 className="text-5xl leading-tight font-extralight">
+            Great <span className=" font-semibold text-[#bc72b7]">Product</span>{" "}
+            is <br />
+            <span className="font-semibold"> built by great</span>{" "}
+            <span className="font-semibold text-[#9c69b8]">teams</span>
+          </h1>
+          <p className="text-lg font-extralight leading-loose">
+            We help build and manage a team of world-class developers to bring
+            your vision to life
+          </p>
+          <Button className="py-7 px-8 bg-[#3D63EA]">Let's get started!</Button>
+        </div>
+        <div>
+          <img src={HeroLogo} alt="ai-solution-hero" />
+        </div>
+        <div className=" w-20 h-20  absolute bottom-0 translate-y-10 left-[35%] hero-cir rounded-full"></div>
+      </section>
+    <div className=" w-16 h-16  absolute bottom-10 right-10 flex items-center justify-center  z-50 bg-[#8B7BED] rounded-full">
+        <MessageSquare />
+      </div>
+    </div>
+  );
+};
+
+export default Landing;
