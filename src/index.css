@@ -76,3 +76,15 @@
   background: rgb(247,102,128);
 background: linear-gradient(225deg, rgba(247,102,128,1) 0%, rgba(87,0,123,1) 100%);
 }
+
+.gallery-bar{
+  background: rgb(247,102,128);
+background: linear-gradient(225deg, rgba(247,102,128,1) 0%, rgba(87,0,123,1) 100%);
+}
+
+.read-more{
+  /* background: rgb(247,102,128); */
+  background: linear-gradient(225deg, rgba(247,102,128,1) 0%, rgba(87,0,123,1) 100%);
+  background-clip: text;
+  color: transparent;
+}
