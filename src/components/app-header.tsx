@@ -9,9 +9,11 @@ const AppHeader = () => {
   const { pathname } = useLocation();
   return (
     <header className="h-16 shadow-md w-full max-sm:px-5  px-7 flex items-center justify-between fixed top-0 left-0 z-[999] bg-white">
-      <div className="flex items-center gap-2">
-        <img src={Logo} alt="ai-solution-logo" />
-        <h1 className="text-xl max-sm:text-lg">Ai-Solution</h1>
+      <div>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={Logo} alt="ai-solution-logo" />
+          <h1 className="text-xl max-sm:text-lg">Ai-Solution</h1>
+        </Link>
       </div>
       <ul className="flex items-center space-x-10 max-sm:hidden relative h-full">
         {navLinks.map((link, i) => (
