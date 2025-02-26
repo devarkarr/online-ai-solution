@@ -96,3 +96,21 @@ background: linear-gradient(225deg, rgba(247,102,128,1) 0%, rgba(87,0,123,1) 100
 .swiper-pagination-bullet-active{
   background-color: #b93f7e !important;
 }
+
+.swiper{
+  overflow:visible !important;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  top: -10rem !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-next {
+  top: -10rem !important;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: #b93f7e !important;
+}
+.swiper_active{
+  scale: 1.4;
+}
