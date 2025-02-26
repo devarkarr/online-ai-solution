@@ -7,6 +7,7 @@ const Gallery = lazy(() => import("@/pages/gallery"));
 const ShowCase = lazy(() => import("@/pages/show-case"));
 const NotFound = lazy(() => import("@/pages/error/not-found"));
 const Service = lazy(() => import("@/pages/service"));
+const Blog = lazy(() => import("@/pages/blogs"));
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
           <Route path="gallery" element={<Gallery />} />
           <Route path="show-case" element={<ShowCase />} />
           <Route path="service" element={<Service />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
