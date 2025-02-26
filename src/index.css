@@ -88,3 +88,11 @@ background: linear-gradient(225deg, rgba(247,102,128,1) 0%, rgba(87,0,123,1) 100
   background-clip: text;
   color: transparent;
 }
+
+.swiper-pagination .swiper-pagination-bullets .swiper-pagination-horizontal{
+  top: 100px !important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #b93f7e !important;
+}

@@ -1,31 +1,45 @@
-import { ChevronRight } from "lucide-react";
-
-interface Props {
-  bg: string;
-  border: string;
+type Props = {
   img: string;
-}
+  className?: string;
+};
 
-const GalleryCard = ({ bg, border, img }: Props) => {
+const GalleryCard = ({ img, className }: Props) => {
   return (
-    <div className={`w-full flex  ${bg} rounded-2xl border ${border}`}>
-      <div className="w-[50%] ">
-        <img src={img} alt="" className="w-full h-full" />
-      </div>
-      <div className="w-[50%] p-10 space-y-7">
-        <h3 className="text-xl">Website Design for SCFC Canada</h3>
-        <p className=" font-extralight text-slate-500 ">
-          Born out of a vision, a single-minded objective that puts service
-          before anything else, Swift Clearance and Forwarding Corp. surging
-          forth to deliver the best services in the shipping and logistics
-          scenario. Its meteoric rise stems out of a solid foundation. The
-          management boasts of over 20 years of rich and varied experience in
-          the shipping and freight forwarding industry.
+    <div className={`w-full flex justify-between ${className} `}>
+      <div className="space-y-6 w-[50%] pr-20 ">
+        <h1 className="text-2xl font-medium">Build the right team to scale</h1>
+
+        <p className=" font-extralight">
+          Finding the right talent is not easy. We help you find the talent that
+          suits your needs, follows your processes, and sticks with you long
+          term (not the case with freelancers
         </p>
-        <div className=" font-medium text-sm flex items-center justify-end ">
-          <p className="read-more">Read more</p>
-          <ChevronRight size={19} color="#b93f7e" />
+        <p>
+          Our <span className="text-[#b93f7e]">delivery model</span> helps you
+          cut costs and deliver within budget.
+        </p>
+        <p className="border-l-2 border-[#b93f7e] ps-2 text-[#b93f7e]">
+          "Simform is quick to identify larger problem with the Software so we
+          decided to expand our scope to build new modules"
+        </p>
+        <div className="flex gap-3 items-center">
+          <img
+            className="size-10 rounded-full"
+            src="https://i.pinimg.com/736x/b4/a9/ff/b4a9ffc3a761255066c343df590f3a06.jpg"
+            alt=""
+          />
+          <div>
+            <p className=" font-medium ">Jeewa markram</p>
+            <p className=" font-thin text-sm">CEO</p>
+          </div>
         </div>
+      </div>
+      <div className="w-[50%]">
+        <img
+          src={img}
+          className="w-[90%] h-[85%] object-cover rounded-lg"
+          alt=""
+        />
       </div>
     </div>
   );
