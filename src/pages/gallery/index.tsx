@@ -8,12 +8,12 @@ const Gallery = () => {
     <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  ">
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-28 h-1 gallery-bar"></div>
-        <h1 className="text-2xl">
+        <h1 className="text-2xl sm:text-3xl">
           <span className="font-thin"> Way of building</span>
           <br /> Great Software
         </h1>
       </div>
-      <div className="mt-12 flex flex-col gap-7 pb-10">
+      <div className="mt-12 flex flex-col gap-10 sm:gap-7 pb-10">
         <GalleryCard img={ImgOne} />
         <GalleryCard img={ImgTwo} className=" flex-row-reverse" />
         <GalleryCard img={ImgThree} />

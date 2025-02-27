@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const AppFooter = () => {
   return (
     <section className=" max-w-6xl  mx-auto  border-t">
-      <div className="flex gap-3 py-9 relative">
-        <div className="space-y-7 w-[40%]">
+      <div className="flex max-sm:flex-col max-sm:px-3 gap-3 py-9 relative">
+        <div className="space-y-7 w-full sm:w-[40%]">
           <div className="flex items-center gap-2">
             <img src={Logo} alt="" />
             <p className="text-lg">AI-Solution</p>
@@ -21,7 +21,7 @@ const AppFooter = () => {
             <img src={GoogleImg} alt="" />
           </div>
         </div>
-        <div className="w-[15%]">
+        <div className="w-full sm:w-[15%]">
           <p className=" font-medium text-lg">Links</p>
           <ul className="space-y-3 mt-7">
             {navLinks.map((link) => (
@@ -33,7 +33,7 @@ const AppFooter = () => {
             ))}
           </ul>
         </div>
-        <div className="w-[35%]">
+        <div className="w-full sm:w-[35%]">
           <p className=" font-medium text-lg">Contact us</p>
           <p className=" font-extralight text-slate-500 mt-7">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -41,7 +41,7 @@ const AppFooter = () => {
           </p>
           <p className="text-slate-500  font-extralight mt-4">+923183561921</p>
         </div>
-        <div className=" absolute bottom-5 right-0 flex items-center gap-3">
+        <div className=" absolute bottom-5 right-3 flex items-center gap-3">
           <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">
             <Facebook size={18} />
           </div>

@@ -15,9 +15,9 @@ const Blog = () => {
     <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-2xl">Blogs</h1>
+        <h1 className="text-2xl sm:text-3xl">Blogs</h1>
       </div>
-      <div className="grid grid-cols-4 gap-5 w-full mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5 w-full mt-10">
         {datas.map((data, i) => (
           <BlogCard key={i} data={data} />
         ))}
@@ -33,7 +33,7 @@ const BlogCard = ({ data }: { data: BlogType }) => {
         <img src={data.img} className="w-full object-cover rounded-lg" alt="" />
       </div>
       <div className="p-3 space-y-3">
-        <p className="text-slate-500 text-sm">{data.text}</p>
+        <p className="text-slate-500 text-xs sm:text-sm">{data.text}</p>
         <div className="flex justify-end items-center gap-2 text-[#b93f7e]">
           <p className="text-xs">Read More</p>
           <ArrowRight size={18} />

@@ -15,19 +15,19 @@ const AboutUs = () => {
     <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-3xl font-extralight text-center">
+        <h1 className="text-2xl sm:text-3xl font-extralight text-center">
           Our design and <br />
           <span className=" font-medium">development approach</span>
         </h1>
       </div>
-      <div className="my-14 grid grid-cols-2 gap-5">
+      <div className="my-14 grid grid-cols-1 sm:grid-cols-2 gap-5">
         {datas.map((data, i) => (
           <AboutCard key={i} data={data} />
         ))}
       </div>
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-3xl font-extralight text-center">
+        <h1 className="text-2xl sm:text-3xl font-extralight text-center">
           How development <br />
           <span className=" font-medium">through Alcaline works</span>
         </h1>
@@ -37,7 +37,7 @@ const AboutUs = () => {
       </div>
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-3xl font-extralight text-center">
+        <h1 className="text-2xl sm:text-3xl font-extralight text-center">
           Our <br />
           <span className=" font-medium">Tech Stack</span>
         </h1>
@@ -45,7 +45,7 @@ const AboutUs = () => {
       <TechStack />
       <div className="flex items-center w-full flex-col space-y-2 mt-10">
         <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-3xl font-extralight text-center">
+        <h1 className="text-2xl sm:text-3xl font-extralight text-center">
           Why cutomers love <br />
           <span className=" font-medium">working with us</span>
         </h1>

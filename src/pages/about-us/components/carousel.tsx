@@ -7,13 +7,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Rating from "@/assets/about-us/rating.svg";
 import { Navigation, Pagination } from "swiper/modules";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Carousel = () => {
+  const smallScreen = useMediaQuery("(max-width: 480px)");
   return (
     <section className="py-4">
       <Swiper
         spaceBetween={30}
-        slidesPerView={5}
+        slidesPerView={smallScreen ? 3 : 5}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         pagination
@@ -47,8 +49,8 @@ const CarouselCard = () => {
           <img src={Rating} className="w-full" alt="" />
         </div>
         <div className="text-center">
-          <p className=" font-medium">Imran Khan</p>
-          <p className="text-sm font-extralight">Software Engineer</p>
+          <p className="max-sm:text-sm font-medium">Imran Khan</p>
+          <p className="text-xs sm:text-sm font-extralight">Software Engineer</p>
         </div>
       </div>
     </div>

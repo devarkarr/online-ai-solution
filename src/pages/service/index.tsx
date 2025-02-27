@@ -13,7 +13,7 @@ const Service = () => {
         <ServiceCard />
       </div>
       <div className="pt-10 w-full bg-[#f9f9ff]">
-        <h1 className=" text-3xl font-semibold text-center">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-center">
           Services we offer
         </h1>
         <div className="">
@@ -21,15 +21,15 @@ const Service = () => {
         </div>
       </div>
       <div className=" max-w-6xl mx-auto px-3  py-14 relative z-30 ">
-        <div className="space-y-6 w-[49%] pr-20 relative before:top-0 pt-4  before:w-16 before:h-1 before:bg-[#b93f7e] before:absolute ">
-          <h1 className="text-3xl font-extralight">
+        <div className="space-y-6 w-full sm:w-[49%] pr-20 relative before:top-0 pt-4  before:w-16 before:h-1 before:bg-[#b93f7e] before:absolute ">
+          <h1 className="text-2xl sm:text-3xl font-extralight">
             Meet the People
             <br />
             <span className="font-medium">We are Working With</span>
           </h1>
         </div>
       </div>
-      <div className="py-16 bg-[#F7F7FA] flex items-center w-full justify-around h-8">
+      <div className="py-16 bg-[#F7F7FA] flex items-center w-full max-sm:gap-5 justify-around h-8">
         <div>
           <img src={ImgOne} alt="" />
         </div>

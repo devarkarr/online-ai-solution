@@ -8,13 +8,13 @@ interface Props {
 
 const GalleryCard = ({ bg, border, img }: Props) => {
   return (
-    <div className={`w-full flex  ${bg} rounded-2xl border ${border}`}>
-      <div className="w-[50%] ">
+    <div className={`w-full flex max-sm:flex-col  ${bg} rounded-2xl border ${border}`}>
+      <div className="w-full sm:w-[50%] ">
         <img src={img} alt="" className="w-full h-full" />
       </div>
-      <div className="w-[50%] p-10 space-y-7">
-        <h3 className="text-xl">Website Design for SCFC Canada</h3>
-        <p className=" font-extralight text-slate-500 ">
+      <div className="w-full sm:w-[50%] p-7 sm:p-10 space-y-5 sm:space-y-7">
+        <h3 className="text-lg sm:text-xl">Website Design for SCFC Canada</h3>
+        <p className="max-sm:text-sm font-extralight text-slate-500 ">
           Born out of a vision, a single-minded objective that puts service
           before anything else, Swift Clearance and Forwarding Corp. surging
           forth to deliver the best services in the shipping and logistics

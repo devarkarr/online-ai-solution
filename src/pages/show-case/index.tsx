@@ -8,9 +8,9 @@ const ShowCase = () => {
     <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  ">
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-16 h-1 gallery-bar"></div>
-        <h1 className="text-2xl">Show Case</h1>
+        <h1 className="text-2xl sm:text-3xl">Show Case</h1>
       </div>
-      <div className="mt-10 flex flex-col gap-7 pb-10">
+      <div className="mt-10 flex flex-col gap-5 sm:gap-7 pb-10">
         {datas.map((data, i) => (
           <GalleryCard key={i} {...data} />
         ))}

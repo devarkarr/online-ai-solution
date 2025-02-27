@@ -13,8 +13,8 @@ import { useState } from "react";
 const TechStack = () => {
   const [active, setActive] = useState(1);
   return (
-    <section className="py-10 w-full">
-      <div className="flex items-center justify-center gap-12">
+    <section className="py-10 w-full ">
+      <div className="flex items-center max-sm:flex-wrap  justify-center sm:gap-12 gap-6 px-3">
         {techs.map((tech) => (
           <div
             key={tech.id}
@@ -33,7 +33,7 @@ const TechStack = () => {
       <div className="flex  flex-wrap items-center gap-7 justify-center px-10 mt-12">
         {techImgs.map((tech) => (
           <div key={tech.id}>
-            <img src={tech.img} alt="" />
+            <img src={tech.img} className=" max-sm:w-20" alt="" />
           </div>
         ))}
       </div>

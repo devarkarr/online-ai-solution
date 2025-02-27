@@ -5,18 +5,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Code } from "lucide-react";
 import { Pagination } from "swiper/modules";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Carousel = () => {
+  const smallScreen = useMediaQuery("(max-width: 760px)");
+
   return (
     <section className="py-4">
       <Swiper
-        spaceBetween={30}
-        slidesPerView={4}
+        spaceBetween={smallScreen ? 15 : 30}
+        slidesPerView={smallScreen ? 2 : 4}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         pagination
         modules={[Pagination]}
-        className="py-20 h-[300px]"
+        className="py-20 h-[350px] md:h-[300px]"
       >
         {new Array(6).fill(0).map((_, i) => (
           <SwiperSlide key={i}>
