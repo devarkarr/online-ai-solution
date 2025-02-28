@@ -39,7 +39,9 @@ const AppHeader = () => {
         ))}
       </ul>
       <div className="flex items-center gap-3">
-        <Button className="btn-bg max-sm:text-xs">Contact us</Button>
+        <Button className="btn-bg max-sm:text-xs">
+          <Link to="contact">Contact us</Link>
+        </Button>
         <div className="w-9 h-9 rounded-full flex items-center justify-center border shadow-md border-slate-100">
           <Search size={18} />
         </div>

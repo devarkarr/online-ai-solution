@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Router from "./routes";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter(
   createRoutesFromElements(<Route path="/*" element={<Router />} />)
@@ -15,5 +16,6 @@ const router = createBrowserRouter(
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster />
   </StrictMode>
 );
