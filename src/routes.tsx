@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import App from "./layouts/App";
+import AppLoader from "./components/app-loader";
 
 const Landing = lazy(() => import("@/pages/landing"));
 const Gallery = lazy(() => import("@/pages/gallery"));
@@ -13,7 +14,7 @@ const Contact = lazy(() => import("@/pages/contact"));
 
 const Router = () => {
   return (
-    <Suspense fallback={<h1>loading...</h1>}>
+    <Suspense fallback={<AppLoader />}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Landing />} />
