@@ -1,6 +1,5 @@
 import HeroLogo from "@/assets/hero.svg";
 import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
 
 const Landing = () => {
   return (
@@ -26,9 +25,6 @@ const Landing = () => {
         </div>
         <div className=" w-20 h-20  absolute bottom-0 translate-y-10 left-[35%] hero-cir rounded-full"></div>
       </section>
-      <div className=" w-16 h-16  absolute bottom-10 right-10 flex items-center justify-center  z-50 bg-[#8B7BED] rounded-full">
-        <MessageSquare />
-      </div>
     </div>
   );
 };
