@@ -22,6 +22,9 @@ import {
 } from "@/components/ui/select";
 import countries from "world-countries";
 import { toast } from "sonner";
+import { ContactPayload } from "@/api/contact-us/interface";
+import { useContactUsMutation } from "@/api/contact-us/mutation";
+import { AxiosError } from "axios";
 // import sendEmail from "@/service/email";
 
 const formSchema = z.object({
@@ -35,26 +38,16 @@ const formSchema = z.object({
   country: z.string().min(1, {
     message: "Country is required",
   }),
-  company_name: z.string().min(1, {
+  companyName: z.string().min(1, {
     message: "Country Name is required",
   }),
-  job_title: z.string().min(1, {
+  jobTitle: z.string().min(1, {
     message: "Job title is required",
   }),
-  job_detail: z.string().min(1, {
+  jobDetail: z.string().min(1, {
     message: "Job Detail is required",
   }),
 });
-
-export interface ContactType {
-  name: string;
-  email: string;
-  phone: string;
-  company_name: string;
-  country: string;
-  job_title: string;
-  job_detail: string;
-}
 
 const countryOptions = countries.map((country) => ({
   value: country.cca2, // Country code
@@ -68,25 +61,39 @@ const Contact = () => {
       name: "",
       email: "",
       phone: "",
-      company_name: "",
+      companyName: "",
       country: "",
-      job_title: "",
-      job_detail: "",
+      jobTitle: "",
+      jobDetail: "",
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: ContactType) {
-    console.log(values);
-    toast.success("Mail Sent Successfully", {
-      position: "top-center",
-      style: {
-        background: "#21c389",
-        color: "#fff",
+  const useContact = useContactUsMutation();
+  function onSubmit(values: ContactPayload) {
+    useContact.mutate(values, {
+      onSuccess: (data) => {
+        toast.success(data._metadata.message, {
+          position: "top-center",
+          style: {
+            background: "#21c389",
+            color: "#fff",
+          },
+        });
+      },
+      onError: (error) => {
+        const errMsg =
+          error instanceof AxiosError
+            ? error.response?.data._metadata.message
+            : "Something went wrong!";
+        toast.success(errMsg, {
+          position: "top-center",
+          style: {
+            background: "#E52020",
+            color: "#fff",
+          },
+        });
       },
     });
-
-    // sendEmail(values);
   }
 
   return (
@@ -166,7 +173,7 @@ const Contact = () => {
               />
               <FormField
                 control={form.control}
-                name="company_name"
+                name="companyName"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Company Name</FormLabel>
@@ -207,7 +214,7 @@ const Contact = () => {
               />
               <FormField
                 control={form.control}
-                name="job_title"
+                name="jobTitle"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Job Title</FormLabel>
@@ -220,7 +227,7 @@ const Contact = () => {
               />
               <FormField
                 control={form.control}
-                name="job_detail"
+                name="jobDetail"
                 render={({ field }) => (
                   <FormItem className=" col-span-full">
                     <FormLabel>Job Detail</FormLabel>
