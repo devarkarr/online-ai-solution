@@ -23,4 +23,8 @@ export const navLinks = [
     label: "Gallery",
     link: "/gallery",
   },
+  {
+    label: "Events",
+    link: "/events",
+  },
 ];

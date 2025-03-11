@@ -3,9 +3,9 @@ import ImgTwo from "@/assets/blog/2.svg";
 import ImgThree from "@/assets/blog/3.svg";
 import ImgFour from "@/assets/blog/4.svg";
 import ImgFive from "@/assets/blog/5.svg";
-import { ArrowRight } from "lucide-react";
+import BlogCard from "./components/blog-card";
 
-interface BlogType {
+export interface BlogType {
   img: string;
   text: string;
 }
@@ -23,23 +23,6 @@ const Blog = () => {
         ))}
       </div>
     </section>
-  );
-};
-
-const BlogCard = ({ data }: { data: BlogType }) => {
-  return (
-    <div className=" shadow-md w-full rounded-md">
-      <div className="w-full">
-        <img src={data.img} className="w-full object-cover rounded-lg" alt="" />
-      </div>
-      <div className="p-3 space-y-3">
-        <p className="text-slate-500 text-xs sm:text-sm">{data.text}</p>
-        <div className="flex justify-end items-center gap-2 text-[#b93f7e]">
-          <p className="text-xs">Read More</p>
-          <ArrowRight size={18} />
-        </div>
-      </div>
-    </div>
   );
 };
 
