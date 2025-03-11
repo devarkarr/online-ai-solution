@@ -1,4 +1,5 @@
 import { EventType } from "@/api/events/interface";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -34,15 +35,29 @@ const ViewDetail = ({ opened, close, data }: Props) => {
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <Calendar1 size={18} />
-          <p className="text-xs text-slate-500">
-            {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
-          </p>
-          {" - "}
-          <p className="text-xs text-slate-500">
-            {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
-          </p>
+
+        <div className="w-full flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Calendar1 size={18} />
+            <p className="text-xs text-slate-500">
+              {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
+            </p>
+            {" - "}
+            <p className="text-xs text-slate-500">
+              {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
+            </p>
+          </div>
+          <Badge
+            className={
+              data.status == "ONGOING"
+                ? "bg-green-500"
+                : data.status == "UPCOMING"
+                ? "bg-blue-400"
+                : "bg-red-500"
+            }
+          >
+            {data.status}
+          </Badge>
         </div>
         <div className="flex items-center gap-2">
           <p className="text-xs">Organized By</p>

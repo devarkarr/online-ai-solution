@@ -3,6 +3,7 @@ import { useState } from "react";
 import ViewDetail from "./view-detail";
 import { EventType } from "@/api/events/interface";
 import dayjs from "dayjs";
+import { Badge } from "@/components/ui/badge";
 
 interface Props {
   data: EventType;
@@ -19,7 +20,20 @@ const EventCard = ({ data }: Props) => {
           <img src={data.files[0].path} alt="" className="w-full h-full" />
         </div>
         <div className="w-full p-5 space-y-4">
-          <h3 className=" sm:text-lg font-medium">{data.name}</h3>
+          <div className="flex items-center justify-between">
+            <h3 className=" sm:text-lg font-medium">{data.name}</h3>
+            <Badge
+              className={
+                data.status == "ONGOING"
+                  ? "bg-green-500"
+                  : data.status == "UPCOMING"
+                  ? "bg-blue-400"
+                  : "bg-red-500"
+              }
+            >
+              {data.status}
+            </Badge>
+          </div>
           <div className="flex items-center gap-2">
             <Calendar1 size={18} />
             <p className="text-xs text-slate-500">
