@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 // @ts-ignore
 import "swiper/css/navigation";
-import Rating from "@/assets/about-us/rating.svg";
 import { Navigation, Pagination } from "swiper/modules";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useGetRatings } from "@/api/about-us/queires";

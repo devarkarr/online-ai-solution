@@ -1,46 +1,62 @@
+import { EventType } from "@/api/events/interface";
 import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-  } from "@/components/ui/dialog";
-  
-  type Props = {
-    opened: boolean;
-    close: () => void;
-    data: {
-      bg: string;
-      border: string;
-      img: string;
-    };
-  };
-  
-  const ViewDetail = ({ opened, close, data }: Props) => {
-    return (
-      <Dialog open={opened} onOpenChange={close}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>
-              <h3 className="text-lg sm:text-xl">
-                Website Design for SCFC Canada
-              </h3>
-            </DialogTitle>
-          </DialogHeader>
-          <p className="max-sm:text-sm font-extralight text-slate-500 ">
-            Born out of a vision, a single-minded objective that puts service
-            before anything else, Swift Clearance and Forwarding Corp. surging
-            forth to deliver the best services in the shipping and logistics
-            scenario. Its meteoric rise stems out of a solid foundation. The
-            management boasts of over 20 years of rich and varied experience in
-            the shipping and freight forwarding industry.
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import dayjs from "dayjs";
+import { Calendar1 } from "lucide-react";
+
+type Props = {
+  opened: boolean;
+  close: () => void;
+  data: EventType;
+};
+
+const ViewDetail = ({ opened, close, data }: Props) => {
+  return (
+    <Dialog open={opened} onOpenChange={close}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>
+            <h3 className="text-lg sm:text-xl">{data.name}</h3>
+          </DialogTitle>
+        </DialogHeader>
+        <div className="w-full h-full grid grid-cols-2 ">
+          {data.files.map((file, i) => (
+            <div className={`w-full h-full ${i < 2 ? " col-span-2" : ""}`}>
+              <img
+                src={file.path}
+                className="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex items-center gap-2">
+          <Calendar1 size={18} />
+          <p className="text-xs text-slate-500">
+            {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
           </p>
-          <div className="w-full h-full">
-            <img src={data.img} className="w-full h-full object-cover" alt="" />
-          </div>
-        </DialogContent>
-      </Dialog>
-    );
-  };
-  
-  export default ViewDetail;
-  
+          {" - "}
+          <p className="text-xs text-slate-500">
+            {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <p className="text-xs">Organized By</p>
+          <p className="text-xs text-[#b93f7e] font-medium">
+            {data.organization}
+          </p>
+        </div>
+
+        <p className="max-sm:text-sm font-extralight text-slate-500 ">
+          {data.detail}
+        </p>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export default ViewDetail;

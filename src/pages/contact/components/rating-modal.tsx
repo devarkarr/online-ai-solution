@@ -153,7 +153,7 @@ const RatingModal = ({ opened, close }: Props) => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full col-span-full">
+              <Button disabled={ratingMutation.isPending} type="submit" className="w-full col-span-full">
                 Submit
               </Button>
             </form>

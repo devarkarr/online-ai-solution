@@ -250,7 +250,11 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full col-span-full">
+              <Button
+                disabled={useContact.isPending}
+                type="submit"
+                className="w-full col-span-full"
+              >
                 Submit
               </Button>
             </form>

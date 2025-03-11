@@ -1,7 +1,7 @@
 import Logo from "@/assets/ai-solution.svg";
 import { navLinks } from "@/assets/navLinks";
 import { Button } from "./ui/button";
-import { Menu, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent } from "./ui/sheet";
@@ -42,9 +42,6 @@ const AppHeader = () => {
         <Button className="btn-bg max-sm:text-xs">
           <Link to="contact">Contact us</Link>
         </Button>
-        <div className="w-9 h-9 rounded-full flex items-center justify-center border shadow-md border-slate-100">
-          <Search size={18} />
-        </div>
 
         <div
           onClick={() => setOpen(!open)}

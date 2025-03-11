@@ -1,35 +1,37 @@
 import { Calendar1, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import ViewDetail from "./view-detail";
+import { EventType } from "@/api/events/interface";
+import dayjs from "dayjs";
 
 interface Props {
-  bg: string;
-  border: string;
-  img: string;
+  data: EventType;
 }
 
-const EventCard = ({ bg, border, img }: Props) => {
+const EventCard = ({ data }: Props) => {
   const [opened, setOpened] = useState(false);
   return (
     <>
       <div
-        className={`w-full flex flex-col  ${bg} rounded-xl overflow-hidden border ${border}`}
+        className={`w-full flex flex-col bg-[#F1F2FF] border-[#E7DAED]  rounded-xl overflow-hidden border `}
       >
         <div className="w-full">
-          <img src={img} alt="" className="w-full h-full" />
+          <img src={data.files[0].path} alt="" className="w-full h-full" />
         </div>
         <div className="w-full p-5 space-y-4">
-          <h3 className=" sm:text-lg font-medium">
-            Website Design for SCFC Canada
-          </h3>
+          <h3 className=" sm:text-lg font-medium">{data.name}</h3>
           <div className="flex items-center gap-2">
             <Calendar1 size={18} />
-            <p className="text-xs text-slate-500">Fri, 15 Sep 2025</p>
+            <p className="text-xs text-slate-500">
+              {dayjs(data.startDate).format("ddd, DD MMM YYYY")}
+            </p>
           </div>
           <div className="flex justify-between items-center">
             <div>
               <p className="text-xs">Organized By</p>
-              <p className="text-sm text-[#b93f7e] font-medium">Your Name</p>
+              <p className="text-sm text-[#b93f7e] font-medium">
+                {data.organization}
+              </p>
             </div>
             <button
               className=" font-medium text-sm flex items-center justify-end "
@@ -41,11 +43,7 @@ const EventCard = ({ bg, border, img }: Props) => {
           </div>
         </div>
       </div>
-      <ViewDetail
-        opened={opened}
-        close={() => setOpened(false)}
-        data={{ bg, border, img }}
-      />
+      <ViewDetail opened={opened} close={() => setOpened(false)} data={data} />
     </>
   );
 };
