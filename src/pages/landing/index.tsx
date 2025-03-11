@@ -1,7 +1,9 @@
 import HeroLogo from "@/assets/hero.svg";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <div className=" relative">
       <section className=" max-w-6xl mx-auto px-3 h-screen max-sm:flex-col-reverse max-sm:justify-center flex items-center relative z-30 overflow-hidden ">
@@ -16,7 +18,10 @@ const Landing = () => {
             We help build and manage a team of world-class developers to bring
             your vision to life
           </p>
-          <Button className="py-7 px-8 max-sm:py-5 max-sm:px-6 bg-[#3D63EA]">
+          <Button
+            className="py-7 px-8 max-sm:py-5 max-sm:px-6 bg-[#3D63EA]"
+            onClick={() => navigate("/contact")}
+          >
             Let's get started!
           </Button>
         </div>
