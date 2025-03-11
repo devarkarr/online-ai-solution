@@ -8,26 +8,28 @@ import "swiper/css/navigation";
 import Rating from "@/assets/about-us/rating.svg";
 import { Navigation, Pagination } from "swiper/modules";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { useGetRatings } from "@/api/about-us/queires";
+import { RatingType } from "@/api/about-us/interface";
+import { FaRegStar, FaStar } from "react-icons/fa6";
 
 const Carousel = () => {
   const smallScreen = useMediaQuery("(max-width: 480px)");
+  const { data } = useGetRatings();
   return (
     <section className="py-4">
       <Swiper
         spaceBetween={30}
         slidesPerView={smallScreen ? 3 : 5}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         pagination
         navigation
-        initialSlide={3}
+        initialSlide={2}
         centeredSlides
         modules={[Pagination, Navigation]}
         className="py-20 h-[200px] w-full"
       >
-        {new Array(10).fill(0).map((_, i) => (
+        {data?.map((rating, i) => (
           <SwiperSlide key={i}>
-            <CarouselCard />
+            <CarouselCard rating={rating} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -35,7 +37,7 @@ const Carousel = () => {
   );
 };
 
-const CarouselCard = () => {
+const CarouselCard = ({ rating }: { rating: RatingType }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="size-14 rounded-full overflow-hidden">
@@ -45,12 +47,19 @@ const CarouselCard = () => {
         />
       </div>
       <div className="space-y-2 mt-4">
-        <div className="w-full">
-          <img src={Rating} className="w-full" alt="" />
+        <div className="w-full flex gap-3">
+          {new Array(rating.rating).fill(0).map((_, i) => (
+            <FaStar key={i} className="cursor-pointer text-[#b93f7e]" />
+          ))}
+          {new Array(5 - rating.rating).fill(0).map((_, i) => (
+            <FaRegStar key={i} className="cursor-pointer" />
+          ))}
         </div>
         <div className="text-center">
-          <p className="max-sm:text-sm font-medium">Imran Khan</p>
-          <p className="text-xs sm:text-sm font-extralight">Software Engineer</p>
+          <p className="max-sm:text-sm font-medium">{rating.name}</p>
+          <p className="text-xs sm:text-sm font-extralight">
+            {rating.jobTitle}
+          </p>
         </div>
       </div>
     </div>
