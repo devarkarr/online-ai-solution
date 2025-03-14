@@ -47,17 +47,17 @@ const CarouselCard = ({ rating }: { rating: RatingType }) => {
       </div>
       <div className="space-y-2 mt-4">
         <div className="w-full flex gap-3">
-          {new Array(rating.rating).fill(0).map((_, i) => (
+          {new Array(rating?.rating).fill(0).map((_, i) => (
             <FaStar key={i} className="cursor-pointer text-[#b93f7e]" />
           ))}
-          {new Array(5 - rating.rating).fill(0).map((_, i) => (
+          {new Array(5 - rating?.rating || 0).fill(0).map((_, i) => (
             <FaRegStar key={i} className="cursor-pointer" />
           ))}
         </div>
         <div className="text-center">
-          <p className="max-sm:text-sm font-medium">{rating.name}</p>
+          <p className="max-sm:text-sm font-medium">{rating?.name}</p>
           <p className="text-xs sm:text-sm font-extralight">
-            {rating.jobTitle}
+            {rating?.jobTitle}
           </p>
         </div>
       </div>
