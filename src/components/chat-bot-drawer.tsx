@@ -17,13 +17,15 @@ const ChatBotDrawer = ({ opened, close }: Props) => {
   useEffect(() => {
     const cookieState = Cookies.get("messages");
     if (cookieState) {
-      const initalMsg = JSON.parse(cookieState);
-      setChatMessages(
-        initalMsg.map((msg: { s: string; r: string }) => msg.s) as string[]
-      );
-      setMessages(
-        initalMsg.map((msg: { s: string; r: string }) => msg.r) as string[]
-      );
+      const initalMsg = JSON.parse(cookieState) as { s: string; r: string }[];
+      if (initalMsg.length) {
+        setChatMessages(
+          initalMsg.map((msg: { s: string; r: string }) => msg.s) as string[]
+        );
+        setMessages(
+          initalMsg.map((msg: { s: string; r: string }) => msg.r) as string[]
+        );
+      }
     }
   }, []);
 

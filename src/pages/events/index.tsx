@@ -10,8 +10,8 @@ const Event = () => {
         <h1 className="text-2xl sm:text-3xl">Featured Events</h1>
       </div>
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3   gap-5 pb-10">
-        {data?.map((d, i) => (
-          <EventCard key={i} data={d} />
+        {data?.map((d) => (
+          <EventCard key={d.id} data={d} />
         ))}
       </div>
     </section>
@@ -19,4 +19,3 @@ const Event = () => {
 };
 
 export default Event;
-

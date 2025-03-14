@@ -15,7 +15,7 @@ const Carousel = () => {
   const smallScreen = useMediaQuery("(max-width: 480px)");
   const { data } = useGetRatings();
   return (
-    <section className="py-4">
+    <section className="py-4 ">
       <Swiper
         spaceBetween={30}
         slidesPerView={smallScreen ? 3 : 5}

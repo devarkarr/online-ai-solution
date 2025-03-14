@@ -27,7 +27,6 @@ import { useContactUsMutation } from "@/api/contact-us/mutation";
 import { AxiosError } from "axios";
 import RatingModal from "./components/rating-modal";
 import { useState } from "react";
-import useStore from "@/store/useStore";
 // import sendEmail from "@/service/email";
 
 const formSchema = z.object({
@@ -59,7 +58,7 @@ const countryOptions = countries.map((country) => ({
 
 const Contact = () => {
   const [opened, setOpened] = useState(false);
-  const { setUser } = useStore();
+  const [userId, setUserId] = useState("");
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -85,7 +84,7 @@ const Contact = () => {
           },
         });
         form.reset();
-        setUser({ userId: data._data.id });
+        setUserId(data._data.id);
         setOpened((prev) => !prev);
       },
       onError: (error) => {
@@ -261,7 +260,12 @@ const Contact = () => {
           </Form>
         </div>
       </div>
-      <RatingModal opened={opened} close={() => setOpened(false)} />
+      <RatingModal
+        userId={userId}
+        resetUserId={() => setUserId("")}
+        opened={opened}
+        close={() => setOpened(false)}
+      />
     </section>
   );
 };

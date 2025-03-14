@@ -12,7 +12,7 @@ import Carousel from "./components/carousel";
 
 const AboutUs = () => {
   return (
-    <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
+    <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10 overflow-hidden">
       <div className="flex items-center w-full flex-col space-y-2">
         <div className="w-10 h-1 gallery-bar"></div>
         <h1 className="text-2xl sm:text-3xl font-extralight text-center">

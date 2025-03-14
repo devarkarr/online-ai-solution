@@ -25,18 +25,17 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { AxiosError } from "axios";
 import { RatingPayload } from "@/api/about-us/interface";
-import useStore from "@/store/useStore";
 import { useRating } from "@/api/about-us/mutation";
 
 type Props = {
   opened: boolean;
   close: () => void;
+  userId: string;
+  resetUserId: () => void;
 };
 
 const formSchema = z.object({
-  userId: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
+  userId: z.string(),
   rating: z.number().min(1, {
     message: "Job title is required",
   }),
@@ -45,47 +44,51 @@ const formSchema = z.object({
   }),
 });
 
-const RatingModal = ({ opened, close }: Props) => {
+const RatingModal = ({ opened, close, userId, resetUserId }: Props) => {
   const [rating, setRating] = useState(0);
-  const { user } = useStore();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      userId: user.userId || "",
+      userId: userId,
       desc: "",
       rating: 0,
     },
   });
 
+  console.log(form.getValues());
   const ratingMutation = useRating();
   function onSubmit(values: RatingPayload) {
-    ratingMutation.mutate(values, {
-      onSuccess: (data) => {
-        toast.success(data._metadata.message, {
-          position: "top-center",
-          style: {
-            background: "#21c389",
-            color: "#fff",
-          },
-        });
-        form.reset();
-        setRating(0);
-        close();
-      },
-      onError: (error) => {
-        const errMsg =
-          error instanceof AxiosError
-            ? error.response?.data._metadata.message
-            : "Something went wrong!";
-        toast.success(errMsg, {
-          position: "top-center",
-          style: {
-            background: "#E52020",
-            color: "#fff",
-          },
-        });
-      },
-    });
+    ratingMutation.mutate(
+      { ...values, userId: userId },
+      {
+        onSuccess: (data) => {
+          toast.success(data._metadata.message, {
+            position: "top-center",
+            style: {
+              background: "#21c389",
+              color: "#fff",
+            },
+          });
+          form.reset();
+          resetUserId();
+          setRating(0);
+          close();
+        },
+        onError: (error) => {
+          const errMsg =
+            error instanceof AxiosError
+              ? error.response?.data._metadata.message
+              : "Something went wrong!";
+          toast.success(errMsg, {
+            position: "top-center",
+            style: {
+              background: "#E52020",
+              color: "#fff",
+            },
+          });
+        },
+      }
+    );
   }
   return (
     <Dialog open={opened} onOpenChange={close}>
@@ -153,7 +156,11 @@ const RatingModal = ({ opened, close }: Props) => {
                   </FormItem>
                 )}
               />
-              <Button disabled={ratingMutation.isPending} type="submit" className="w-full col-span-full">
+              <Button
+                disabled={ratingMutation.isPending}
+                type="submit"
+                className="w-full col-span-full"
+              >
                 Submit
               </Button>
             </form>
