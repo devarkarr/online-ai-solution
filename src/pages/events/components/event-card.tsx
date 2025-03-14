@@ -14,10 +14,14 @@ const EventCard = ({ data }: Props) => {
   return (
     <>
       <div
-        className={`w-full flex flex-col bg-[#F1F2FF] border-[#E7DAED]  rounded-xl overflow-hidden border `}
+        className={`w-full flex flex-col bg-[#F1F2FF] dark:bg-[#161617] dark:border-[#161617] border-[#E7DAED]  rounded-xl overflow-hidden border `}
       >
         <div className="w-full">
-          <img src={data?.files ? data?.files[0]?.path : ''} alt="" className="w-full h-full" />
+          <img
+            src={data?.files ? data?.files[0]?.path : ""}
+            alt=""
+            className="w-full h-full"
+          />
         </div>
         <div className="w-full p-5 space-y-4">
           <div className="flex items-center justify-between">

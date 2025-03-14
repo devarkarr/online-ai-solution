@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import ViewDetail from "./view-detail";
+import { useTheme } from "@/components/theme-provider";
 
 interface Props {
   bg: string;
@@ -9,11 +10,17 @@ interface Props {
 }
 
 const GalleryCard = ({ bg, border, img }: Props) => {
+  const { theme } = useTheme();
+
   const [opened, setOpened] = useState(false);
   return (
     <>
       <div
-        className={`w-full flex max-sm:flex-col  ${bg} rounded-2xl border ${border}`}
+        className={`w-full flex max-sm:flex-col  ${
+          theme === "dark" ? "dark:bg-[#161617]" : bg
+        } rounded-2xl border  ${
+          theme === "dark" ? "dark:border-[#161617]" : border
+        }`}
       >
         <div className="w-full sm:w-[50%] ">
           <img src={img} alt="" className="w-full h-full" />

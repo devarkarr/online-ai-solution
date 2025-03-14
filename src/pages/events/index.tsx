@@ -13,6 +13,9 @@ const Event = () => {
         {data?.map((d) => (
           <EventCard key={d.id} data={d} />
         ))}
+        {(data?.length as number) < 0 && (
+          <p className="text-center  text-lg col-span-12">Not Events</p>
+        )}
       </div>
     </section>
   );

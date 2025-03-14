@@ -12,7 +12,7 @@ const Service = () => {
       <div className=" max-w-6xl mx-auto px-3  pt-24 relative z-30 ">
         <ServiceCard />
       </div>
-      <div className="pt-10 w-full bg-[#f9f9ff]">
+      <div className="pt-10 w-full bg-[#f9f9ff] dark:bg-[#161617]">
         <h1 className="text-2xl sm:text-3xl font-semibold text-center">
           Services we offer
         </h1>
@@ -29,7 +29,7 @@ const Service = () => {
           </h1>
         </div>
       </div>
-      <div className="py-16 bg-[#F7F7FA] flex items-center w-full max-sm:gap-5 justify-around h-8">
+      <div className="py-16 bg-[#F7F7FA] dark:bg-[#161617] flex items-center w-full max-sm:gap-5 justify-around h-8">
         <div>
           <img src={ImgOne} alt="" />
         </div>

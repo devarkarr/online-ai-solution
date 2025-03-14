@@ -7,7 +7,7 @@ const BlogCard = ({ data }: { data: BlogType }) => {
   const [opened, setOpened] = useState(false);
   return (
     <>
-      <div className=" shadow-md w-full rounded-md flex flex-col ">
+      <div className=" shadow-md w-full dark:bg-[#161617] rounded-md flex flex-col ">
         <img
           src={data.img}
           className="w-full h-full object-cover rounded-lg"

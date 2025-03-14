@@ -4,6 +4,7 @@ import ImgTwo from "@/assets/gallery/gallery-two.svg";
 import ImgThree from "@/assets/gallery/gallery-three.svg";
 
 const ShowCase = () => {
+
   return (
     <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  ">
       <div className="flex items-center w-full flex-col space-y-2">

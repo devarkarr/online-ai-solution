@@ -7,7 +7,7 @@ type Props = {
 
 const AboutCard = ({ data }: Props) => {
   return (
-    <div className="w-full p-7 py-8 border border-slate-200 flex gap-4 rounded-md ">
+    <div className="w-full p-7 py-8 border border-slate-200 dark:border-slate-800 flex gap-4 rounded-md ">
       <div>
         <img src={data.img} className="w-full h-full -translate-y-7" alt="" />
       </div>

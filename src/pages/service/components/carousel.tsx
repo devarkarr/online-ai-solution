@@ -38,7 +38,7 @@ const CarouselCard = () => {
   return (
     <>
       <div
-        className="p-5 py-6  bg-white rounded-lg shadow-sm space-y-4 cursor-pointer"
+        className="p-5 py-6  bg-white dark:bg-black rounded-lg shadow-sm space-y-4 cursor-pointer"
         onClick={() => setOpened((prev) => !prev)}
       >
         <div className="size-12 border  border-[#b93f7e] shadow-sm rounded-full flex items-center justify-center">

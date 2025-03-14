@@ -69,13 +69,13 @@ const ChatBotDrawer = ({ opened, close }: Props) => {
                 <p className="py-1.5 px-4 ms-auto text-sm rounded-3xl w-auto bg-[#6f59fd] text-white">
                   {msg}
                 </p>
-                <p className="py-1.5 px-4 me-auto text-sm rounded-3xl w-auto bg-gray-300 ">
+                <p className="py-1.5 px-4 me-auto text-sm rounded-3xl w-auto bg-gray-300  dark:bg-[#161617] ">
                   {messages[i]}
                 </p>
               </div>
             ))}
           </div>
-          <div className="mt-auto mb-4 px-3 w-full h-10 bg-gray-200 rounded-md flex gap-3">
+          <div className="mt-auto mb-4 px-3 w-full h-10 bg-gray-200  dark:bg-[#161617] rounded-md flex gap-3">
             <input
               value={message}
               onChange={(e) => setMessage(e.target.value)}
