@@ -1,5 +1,5 @@
 import ImgOne from "@/assets/service/one.svg";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import VideoPlayer from "./video-player";
 import { useState } from "react";
 
@@ -24,10 +24,10 @@ const ServiceCard = () => {
             of your project.
           </p>
 
-          <div className="text-[#b93f7e] flex items-center max-sm:justify-end gap-3">
+          {/* <div className="text-[#b93f7e] flex items-center max-sm:justify-end gap-3">
             <p className="text-sm">See more Informations</p>
             <ArrowRight size={19} />
-          </div>
+          </div> */}
         </div>
         <div
           className="w-full sm:w-[50%]"

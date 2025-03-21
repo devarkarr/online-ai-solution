@@ -7,9 +7,11 @@ interface Props {
   bg: string;
   border: string;
   img: string;
+  title: string;
+  des: string;
 }
 
-const GalleryCard = ({ bg, border, img }: Props) => {
+const GalleryCard = ({ bg, border, img, title, des }: Props) => {
   const { theme } = useTheme();
 
   const [opened, setOpened] = useState(false);
@@ -26,14 +28,9 @@ const GalleryCard = ({ bg, border, img }: Props) => {
           <img src={img} alt="" className="w-full h-full" />
         </div>
         <div className="w-full sm:w-[50%] p-7 sm:p-10 space-y-5 sm:space-y-7">
-          <h3 className="text-lg sm:text-xl">Website Design for SCFC Canada</h3>
+          <h3 className="text-lg sm:text-xl">{title}</h3>
           <p className="max-sm:text-sm font-extralight text-slate-500 ">
-            Born out of a vision, a single-minded objective that puts service
-            before anything else, Swift Clearance and Forwarding Corp. surging
-            forth to deliver the best services in the shipping and logistics
-            scenario. Its meteoric rise stems out of a solid foundation. The
-            management boasts of over 20 years of rich and varied experience in
-            the shipping and freight forwarding industry.
+            {des}
           </p>
           <button
             className=" font-medium text-sm flex items-center justify-end "
@@ -47,7 +44,7 @@ const GalleryCard = ({ bg, border, img }: Props) => {
       <ViewDetail
         opened={opened}
         close={() => setOpened(false)}
-        data={{ bg, border, img }}
+        data={{ bg, border, img, title, des }}
       />
     </>
   );

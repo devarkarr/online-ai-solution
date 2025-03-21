@@ -117,10 +117,10 @@ const Contact = () => {
           </div>
           <h5>Contact us</h5>
           <p className="w-60 mx-auto text-slate-500 text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.{" "}
+            Contact us to learn more about how we can help transform your
+            business with Ai-driven solutions{" "}
           </p>
-          <p className="text-slate-500">+923183561921</p>
+          <p className="text-slate-500">+959267005077</p>
         </div>
         <div className="w-full sm:w-[50%] p-5 sm:p-7 border rounded-lg">
           <h1 className="text-xl md:text-2xl font-medium text-center">
@@ -209,7 +209,7 @@ const Contact = () => {
 
                       <SelectContent>
                         {countryOptions.map((country) => (
-                          <SelectItem key={country.label} value={country.value}>
+                          <SelectItem key={country.label} value={country.label}>
                             {country.label}
                           </SelectItem>
                         ))}

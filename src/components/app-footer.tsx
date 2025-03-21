@@ -14,8 +14,8 @@ const AppFooter = () => {
             <p className="text-lg">AI-Solution</p>
           </div>
           <p className=" font-extralight text-slate-500">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.{" "}
+            We specialize in building cutting-edge AI solutions for innovative
+            companies{" "}
           </p>
           <div>
             <img src={GoogleImg} alt="" />
@@ -36,10 +36,10 @@ const AppFooter = () => {
         <div className="w-full sm:w-[35%]">
           <p className=" font-medium text-lg">Contact us</p>
           <p className=" font-extralight text-slate-500 mt-7">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.{" "}
+            Contact us to learn more about how we can help transform your
+            business with Ai-driven solutions{" "}
           </p>
-          <p className="text-slate-500  font-extralight mt-4">+923183561921</p>
+          <p className="text-slate-500  font-extralight mt-4">+959267005077</p>
         </div>
         <div className=" absolute bottom-5 right-3 flex items-center gap-3">
           <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">

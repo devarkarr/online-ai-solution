@@ -65,26 +65,32 @@ export default AboutUs;
 const datas = [
   {
     title: "UX Driven Engineering",
+    des: "Focusing on user experience (UX) to craft intuitive, responsive and aesthetically pleasing designs.",
     img: ImgOne,
   },
   {
     title: "Developing Shared Understanding",
+    des: "Ensuring clear communication between stakeholders, aligning goals and expectations early in the process.",
     img: ImgTwo,
   },
   {
     title: "Proven Experience and Expertise",
+    des: "Leveraging our team’s expertise to bring innovative, efficient solutions to life. ",
     img: ImgThree,
   },
   {
     title: "Security & Intellectual Property (IP)",
+    des: "Prioritizing data security and protecting your intellectual property throughout development. ",
     img: ImgFour,
   },
   {
     title: "Code Reviews",
+    des: "Conducting thorough code review to maintain quality, optimize performance, and prevent issues. ",
     img: ImgFive,
   },
   {
     title: "Quality Assurance & Testing",
+    des: "Ensuring reliable performance with comprehensive testing across all platforms and devices. ",
     img: ImgSix,
   },
 ];

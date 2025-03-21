@@ -8,28 +8,27 @@ import {
 type Props = {
   opened: boolean;
   close: () => void;
+  data: {
+    title: string;
+    des: string;
+    img: string;
+  };
 };
 
-const ViewDetail = ({ opened, close }: Props) => {
+const ViewDetail = ({ opened, close, data }: Props) => {
   return (
     <Dialog open={opened} onOpenChange={close}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            <h3 className="text-lg sm:text-xl">Web Design & Development</h3>
+            <h3 className="text-lg sm:text-xl">{data.title}</h3>
           </DialogTitle>
         </DialogHeader>
         <p className="max-sm:text-sm font-extralight text-slate-500 ">
-          A Website is an extension of yourself and we can help you to express
-          it properly. Your website is your number one marketing asset because
-          we live in a digital age.
+          {data.des}
         </p>
         <div className="w-full h-full">
-          <img
-            src="https://i.pinimg.com/736x/22/bc/8e/22bc8ebef610eb881071e1a7007a7a80.jpg"
-            className="w-full h-full object-cover"
-            alt=""
-          />
+          <img src={data.img} className="w-full h-full object-cover" alt="" />
         </div>
       </DialogContent>
     </Dialog>

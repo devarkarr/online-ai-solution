@@ -2,6 +2,7 @@ type Props = {
   data: {
     title: string;
     img: string;
+    des: string;
   };
 };
 
@@ -13,11 +14,7 @@ const AboutCard = ({ data }: Props) => {
       </div>
       <div className="space-y-3">
         <h1 className="text-xl">{data.title}</h1>
-        <p className="text-slate-500 font-extralight">
-          Unlike other companies, we are a UX first development company.
-          Projects are driven by designers and they make sure design and
-          experiences translate to code.
-        </p>
+        <p className="text-slate-500 font-extralight">{data.des}</p>
       </div>
     </div>
   );

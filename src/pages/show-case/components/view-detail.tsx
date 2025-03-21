@@ -12,6 +12,8 @@ type Props = {
     bg: string;
     border: string;
     img: string;
+    title: string;
+    des: string;
   };
 };
 
@@ -21,18 +23,11 @@ const ViewDetail = ({ opened, close, data }: Props) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            <h3 className="text-lg sm:text-xl">
-              Website Design for SCFC Canada
-            </h3>
+            <h3 className="text-lg sm:text-xl">{data.title}</h3>
           </DialogTitle>
         </DialogHeader>
         <p className="max-sm:text-sm font-extralight text-slate-500 ">
-          Born out of a vision, a single-minded objective that puts service
-          before anything else, Swift Clearance and Forwarding Corp. surging
-          forth to deliver the best services in the shipping and logistics
-          scenario. Its meteoric rise stems out of a solid foundation. The
-          management boasts of over 20 years of rich and varied experience in
-          the shipping and freight forwarding industry.
+          {data.des}
         </p>
         <div className="w-full h-full">
           <img src={data.img} className="w-full h-full object-cover" alt="" />
