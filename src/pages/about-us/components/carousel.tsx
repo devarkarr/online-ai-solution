@@ -10,6 +10,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { useGetRatings } from "@/api/about-us/queires";
 import { RatingType } from "@/api/about-us/interface";
 import { FaRegStar, FaStar } from "react-icons/fa6";
+import { ShieldOff } from "lucide-react";
 
 const Carousel = () => {
   const smallScreen = useMediaQuery("(max-width: 480px)");
@@ -31,6 +32,12 @@ const Carousel = () => {
             <CarouselCard rating={rating} />
           </SwiperSlide>
         ))}
+        {!data && (
+          <div className="flex flex-col items-center -mt-32">
+            <ShieldOff />
+            <p className="text-center  text-lg col-span-12">Not Rating</p>
+          </div>
+        )}
       </Swiper>
     </section>
   );

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -95,9 +94,6 @@ const RatingModal = ({ opened, close, userId, resetUserId }: Props) => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Rating</DialogTitle>
-          <DialogDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          </DialogDescription>
         </DialogHeader>
         <div>
           <Form {...form}>
