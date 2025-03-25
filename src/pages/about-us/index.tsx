@@ -2,9 +2,9 @@ import ImgOne from "@/assets/about-us/1.svg";
 import ImgTwo from "@/assets/about-us/2.svg";
 import ImgThree from "@/assets/about-us/3.svg";
 import ImgFour from "@/assets/about-us/4.svg";
-import ImgFive from "@/assets/about-us/5.svg";
 import SkillImg from "@/assets/about-us/what-skill.svg";
 import FeatOne from "@/assets/about-us/feat-1.svg";
+import Carousel from "./components/carousel";
 
 const AboutUs = () => {
   return (
@@ -109,21 +109,9 @@ const AboutUs = () => {
             <img src={ImgFour} alt="" />
           </div>
         </div>
-        <div className="my-14 grid grid-cols-1 items-center  sm:grid-cols-2 gap-5">
-          <div>
-            <img src={ImgFive} alt="" />
-          </div>
-          <div className="space-y-4 md:w-[80%]">
-            <h3 className="text-2xl md:text-3xl leading-relaxed">
-              <span className="text-[#F48C06]">Tools</span> For Teachers And
-              Learners
-            </h3>
-            <p className="sm:text-lg text-gray-500 leading-relaxed">
-              Class has a dynamic set of teaching tools built to be deployed and
-              used during class. Teachers can handout assignments in real-time
-              for students to complete and submit.
-            </p>
-          </div>
+
+        <div className="py-10">
+          <Carousel />
         </div>
       </section>
     </div>

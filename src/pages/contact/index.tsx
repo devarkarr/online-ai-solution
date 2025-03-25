@@ -104,169 +104,164 @@ const Contact = () => {
   }
 
   return (
-    <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
-      <div className="flex items-center w-full flex-col space-y-2">
-        <div className="w-10 h-1 gallery-bar"></div>
-        <h1 className="text-2xl sm:text-3xl">Contact Us</h1>
-      </div>
-      <div className="w-full flex max-sm:flex-col justify-center gap-7 my-12 items-center">
-        <div className="text-center space-y-4 w-full sm:w-[50%]">
-          <div className="space-y-3 flex flex-col items-center">
-            <img src={Logo} alt="" />
-            <h4 className="text-lg md:text-2xl">Ai-Solution</h4>
-          </div>
-          <h5>Contact us</h5>
-          <p className="w-60 mx-auto text-slate-500 text-sm">
-            Contact us to learn more about how we can help transform your
-            business with Ai-driven solutions{" "}
-          </p>
-          <p className="text-slate-500">+959267005077</p>
+    <div className="dark:bg-gray-900">
+      <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
+        <div className="flex items-center w-full flex-col space-y-2">
+          <h1 className="text-2xl sm:text-3xl text-[#F48C06]">Contact Us</h1>
         </div>
-        <div className="w-full sm:w-[50%] p-5 sm:p-7 border rounded-lg">
-          <h1 className="text-xl md:text-2xl font-medium text-center">
-            Contact Our team
-          </h1>
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="gap-4 w-full grid grid-cols-2 mt-7"
-            >
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="example@gmail.com"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        placeholder="Enter phone"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="companyName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Company Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter company name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="country"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Country</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select country" />
-                        </SelectTrigger>
-                      </FormControl>
-
-                      <SelectContent>
-                        {countryOptions.map((country) => (
-                          <SelectItem key={country.label} value={country.label}>
-                            {country.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="jobTitle"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Job Title</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter job title" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="jobDetail"
-                render={({ field }) => (
-                  <FormItem className=" col-span-full">
-                    <FormLabel>Job Detail</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        rows={5}
-                        placeholder="Enter job detail"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button
-                disabled={useContact.isPending}
-                type="submit"
-                className="w-full col-span-full"
+        <div className="w-full flex max-sm:flex-col justify-center gap-7 my-12 items-center">
+          <div className="w-full sm:w-[50%]  p-5 sm:p-7 border rounded-lg">
+            <h1 className="text-xl md:text-2xl font-medium text-center">
+              Contact Us Form
+            </h1>
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="gap-4 w-full grid grid-cols-2 mt-7"
               >
-                Submit
-              </Button>
-            </form>
-          </Form>
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="example@gmail.com"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          placeholder="Enter phone"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="companyName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Company Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter company name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="country"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Country</FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select country" />
+                          </SelectTrigger>
+                        </FormControl>
+
+                        <SelectContent>
+                          {countryOptions.map((country) => (
+                            <SelectItem
+                              key={country.label}
+                              value={country.label}
+                            >
+                              {country.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="jobTitle"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Job Title</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter job title" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="jobDetail"
+                  render={({ field }) => (
+                    <FormItem className=" col-span-full">
+                      <FormLabel>Job Detail</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          rows={5}
+                          placeholder="Enter job detail"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button
+                  disabled={useContact.isPending}
+                  type="submit"
+                  className="w-full col-span-full"
+                >
+                  Submit
+                </Button>
+              </form>
+            </Form>
+          </div>
+          <div className="text-center space-y-4 w-full sm:w-[50%]">
+            <img src={Logo} alt="" />
+          </div>
         </div>
-      </div>
-      <RatingModal
-        userId={userId}
-        resetUserId={() => setUserId("")}
-        opened={opened}
-        close={() => setOpened(false)}
-      />
-    </section>
+        <RatingModal
+          userId={userId}
+          resetUserId={() => setUserId("")}
+          opened={opened}
+          close={() => setOpened(false)}
+        />
+      </section>
+    </div>
   );
 };
 
