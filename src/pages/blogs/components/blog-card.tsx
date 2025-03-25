@@ -7,7 +7,7 @@ const BlogCard = ({ data }: { data: BlogType }) => {
   console.log(opened);
   return (
     <>
-      <div className="p-4 shadow-lg w-full dark:bg-[#161617] rounded-md flex flex-col ">
+      <div className="p-4 shadow-lg w-full border dark:bg-[#161617] rounded-md flex flex-col ">
         <img
           src={data.img}
           className="w-full h-full object-cover rounded-lg"

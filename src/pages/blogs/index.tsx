@@ -11,18 +11,20 @@ export interface BlogType {
 
 const Blog = () => {
   return (
-    <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
-      <div className="flex items-center w-full flex-col space-y-2">
-        <h1 className="text-2xl sm:text-3xl ">
-          <span className="text-[#F48C06]">Blogs</span> and Resources
-        </h1>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 w-full mt-10">
-        {datas.map((data, i) => (
-          <BlogCard key={i} data={data} />
-        ))}
-      </div>
-    </section>
+    <div className="dark:bg-gray-900">
+      <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
+        <div className="flex items-center w-full flex-col space-y-2">
+          <h1 className="text-2xl sm:text-3xl ">
+            <span className="text-[#F48C06]">Blogs</span> and Resources
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 w-full mt-10">
+          {datas.map((data, i) => (
+            <BlogCard key={i} data={data} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
