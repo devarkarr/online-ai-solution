@@ -1,9 +1,9 @@
-import { ScaleLoader } from "react-spinners";
+import { DotLoader } from "react-spinners";
 
 const AppLoader = () => {
   return (
     <section className=" h-dvh w-full flex items-center justify-center">
-      <ScaleLoader color="#b93f7e" />
+      <DotLoader color="#F48C06" />
     </section>
   );
 };
