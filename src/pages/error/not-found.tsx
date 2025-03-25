@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <section className="h-[70vh] space-y-6 max-w-6xl mx-auto flex flex-col justify-center items-center overflow-hidden">
-      <h1 className="text-4xl font-semibold text-[#57007B]">Page Not Found</h1>
-      <Button className="bg-[#57007B]">
+      <h1 className="text-4xl font-semibold text-[#F48C06]">Page Not Found</h1>
+      <Button className="bg-[#F48C06]">
         <Link to="/">
           <p>Back to home</p>
         </Link>

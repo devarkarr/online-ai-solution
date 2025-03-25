@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --ai:216, 96%, 51%
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -31,6 +34,7 @@
     --radius: 0.5rem;
   }
   .dark {
+    --ai:216, 96%, 51%
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -68,12 +72,7 @@
 }
 
 .btn-bg {
-  background: rgb(102, 117, 247);
-  background: linear-gradient(
-    188deg,
-    rgba(102, 117, 247, 1) 0%,
-    rgba(100, 0, 142, 1) 100%
-  );
+ background-color: #F48C06;
 }
 
 .hero-cir {

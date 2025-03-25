@@ -1,62 +1,35 @@
-import Logo from "@/assets/ai-solution.svg";
-import GoogleImg from "@/assets/google.svg";
-import { navLinks } from "@/assets/navLinks";
-import { Facebook, Instagram, Linkedin, Twitch } from "lucide-react";
-import { Link } from "react-router-dom";
+import Logo from "@/assets/logo.svg";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 const AppFooter = () => {
   return (
     <section className=" max-w-6xl  mx-auto  border-t">
-      <div className="flex max-sm:flex-col max-sm:px-3 gap-3 py-9 relative">
-        <div className="space-y-7 w-full sm:w-[40%]">
-          <div className="flex items-center gap-2">
-            <img src={Logo} alt="" />
-            <p className="text-lg">AI-Solution</p>
-          </div>
-          <p className=" font-extralight text-slate-500">
-            We specialize in building cutting-edge AI solutions for innovative
-            companies{" "}
+      <div className="my-6">
+        <div className="flex w-full items-center justify-center gap-3">
+          <img src={Logo} alt="" className="w-32" />
+          <p className="border-l-2 ps-4 text-sm">
+            Virtual Class <br />
+            for Zoom
           </p>
-          <div>
-            <img src={GoogleImg} alt="" />
-          </div>
         </div>
-        <div className="w-full sm:w-[15%]">
-          <p className=" font-medium text-lg">Links</p>
-          <ul className="space-y-3 mt-7">
-            {navLinks.map((link) => (
-              <li key={link.link}>
-                <Link to={link.link}>
-                  <p className="text-slate-500 font-light">{link.label}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-full sm:w-[35%]">
-          <p className=" font-medium text-lg">Contact us</p>
-          <p className=" font-extralight text-slate-500 mt-7">
-            Contact us to learn more about how we can help transform your
-            business with Ai-driven solutions{" "}
-          </p>
-          <p className="text-slate-500  font-extralight mt-4">+959267005077</p>
-        </div>
-        <div className=" absolute bottom-5 right-3 flex items-center gap-3">
-          <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">
-            <Facebook size={18} />
-          </div>
-          <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">
-            <Instagram size={18} />
-          </div>
-          <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">
-            <Twitch size={18} />
-          </div>
-          <div className=" w-9 h-9 flex items-center justify-center rounded-full  border border-slate-100 shadow-lg">
-            <Linkedin size={18} />
-          </div>
+      </div>
+      <div className="flex flex-col justify-center items-center space-y-4 my-8">
+        <p>Subscribe to get our Newsletter</p>
+        <div className="flex items-center gap-3">
+          <Input
+            className="rounded-full py-0.5 px-4 w-[250px]"
+            placeholder="Your email"
+          />
+          <Button className="bg-[#F48C06] rounded-full">Subscribe</Button>
         </div>
       </div>
       <div className="py-4 border-t">
+        <ul className="flex items-center gap-3 text-xs justify-center mb-4">
+          <li>Events</li>
+          <li className="border-l ps-3">Privacy Policy</li>
+          <li className="border-l ps-3">Terms & Conditions</li>
+        </ul>
         <p className="text-center text-slate-500 font-light text-sm">
           &copy; {new Date().getFullYear()} Copyright by Developers. All rights
           reserved.
