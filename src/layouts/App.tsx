@@ -11,7 +11,7 @@ const App = () => {
   console.log(opened);
   return (
     <>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <AppHeader />
         <Outlet />
         <div
