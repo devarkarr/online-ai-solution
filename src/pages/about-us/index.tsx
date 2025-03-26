@@ -5,6 +5,7 @@ import ImgFour from "@/assets/about-us/4.svg";
 import SkillImg from "@/assets/about-us/what-skill.svg";
 import FeatOne from "@/assets/about-us/feat-1.svg";
 import Carousel from "./components/carousel";
+import FeedbackForm from "./components/feedback-form";
 
 const AboutUs = () => {
   return (
@@ -112,6 +113,9 @@ const AboutUs = () => {
 
         <div className="py-10">
           <Carousel />
+        </div>
+        <div className=" md:w-1/2 mx-auto ">
+          <FeedbackForm />
         </div>
       </section>
     </div>

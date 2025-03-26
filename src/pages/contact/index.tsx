@@ -243,7 +243,7 @@ const Contact = () => {
                 <Button
                   disabled={useContact.isPending}
                   type="submit"
-                  className="w-full col-span-full"
+                  className="w-full col-span-full bg-[#F48C06] hover:bg-[#F48C06]"
                 >
                   Submit
                 </Button>

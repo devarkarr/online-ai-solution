@@ -80,14 +80,14 @@ const AppHeader = () => {
       </div>
 
       <Sheet open={open} onOpenChange={() => setOpen(false)}>
-        <SheetContent className="pt-24 w-[300px]">
+        <SheetContent className="pt-24 w-[300px] ">
           <ul className="flex flex-col items-center space-y-10  relative h-full ">
             {navLinks.map((link, i) => (
               <Link to={link.link} key={i} onClick={() => setOpen(false)}>
                 <li className="">
                   <p
                     className={cn("font-medium", {
-                      "text-[#a82bde]": link.link === pathname,
+                      "text-[#F48C06]": link.link === pathname,
                     })}
                   >
                     {link.label}
