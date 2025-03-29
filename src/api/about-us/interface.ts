@@ -1,20 +1,14 @@
 export interface RatingPayload {
-  userId: string;
+  name: string;
   rating: number;
-  desc: string;
+  feedback: string;
 }
 
 export type RatingType = {
   id: string;
-  name: string;
-  phone: string;
-  email: string;
-  companyName: string;
-  country: string;
-  jobTitle: string;
-  jobDetail: string;
-  rating: number;
-  ratingDesc?: string | null;
+  feedback: string;
+  rate: number;
+  ratedBy: string;
   createdAt: string;
   updatedAt: string;
 };

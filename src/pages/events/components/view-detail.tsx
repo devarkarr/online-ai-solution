@@ -24,9 +24,19 @@ const ViewDetail = ({ opened, close, data }: Props) => {
             <h3 className="text-lg sm:text-xl">{data?.name}</h3>
           </DialogTitle>
         </DialogHeader>
+        <div className="flex items-center gap-2">
+          <Calendar1 size={18} />
+          <p className="text-xs text-slate-500">
+            {dayjs(data?.startDate).format("ddd, DD MMM YYYY")}
+          </p>
+          {" - "}
+          <p className="text-xs text-slate-500">
+            {dayjs(data?.startDate).format("ddd, DD MMM YYYY")}
+          </p>
+        </div>
         <div className="w-full h-full grid grid-cols-2 ">
           {data?.files?.map((file, i) => (
-            <div className={`w-full h-full ${i < 2 ? " col-span-2" : ""}`}>
+            <div className={`w-full h-[250px] ${i < 2 ? " col-span-2" : ""}`}>
               <img
                 src={file.path}
                 className="w-full h-full object-cover"
@@ -36,34 +46,24 @@ const ViewDetail = ({ opened, close, data }: Props) => {
           ))}
         </div>
 
-        <div className="w-full flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Calendar1 size={18} />
-            <p className="text-xs text-slate-500">
-              {dayjs(data?.startDate).format("ddd, DD MMM YYYY")}
-            </p>
-            {" - "}
-            <p className="text-xs text-slate-500">
-              {dayjs(data?.startDate).format("ddd, DD MMM YYYY")}
+            <p className="text-xs">Organized By</p>
+            <p className="text-xs text-[#F48C06] font-medium">
+              {data?.organization}
             </p>
           </div>
           <Badge
-            className={
+            className={`${
               data?.status == "ONGOING"
                 ? "bg-green-500"
                 : data?.status == "UPCOMING"
-                ? "bg-blue-400"
-                : "bg-red-500"
-            }
+                ? "bg-yellow-400"
+                : "bg-indigo-500"
+            } text-white`}
           >
             {data?.status}
           </Badge>
-        </div>
-        <div className="flex items-center gap-2">
-          <p className="text-xs">Organized By</p>
-          <p className="text-xs text-[#b93f7e] font-medium">
-            {data?.organization}
-          </p>
         </div>
 
         <p className="max-sm:text-sm font-extralight text-slate-500 ">

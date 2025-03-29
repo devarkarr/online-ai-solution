@@ -1,15 +1,10 @@
+import { useGetBlogs } from "@/api/blog/queries";
 import BlogCard from "./components/blog-card";
-import ImgOne from "@/assets/blog/1.svg";
-export interface BlogType {
-  img: string;
-  text: string;
-  des: string;
-  type: string;
-  author: string;
-  created_date: string;
-}
+import { Skeleton } from "@/components/ui/skeleton";
+import { ShieldOff } from "lucide-react";
 
 const Blog = () => {
+  const { data, isPending } = useGetBlogs();
   return (
     <div className="dark:bg-gray-900">
       <section className=" max-w-6xl mx-auto px-3  pt-24 relative z-30  pb-10">
@@ -19,9 +14,23 @@ const Blog = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 w-full mt-10">
-          {datas.map((data, i) => (
-            <BlogCard key={i} data={data} />
-          ))}
+          {isPending
+            ? new Array(6).fill(0).map((_, i) => (
+                <div key={i} className="flex flex-col space-y-3">
+                  <Skeleton className="h-[250px]  rounded-xl" />
+                  <div className="space-y-2">
+                    <Skeleton className="h-6 w-[250px]" />
+                    <Skeleton className="h-6 w-[200px]" />
+                  </div>
+                </div>
+              ))
+            : data?.map((blog, i) => <BlogCard key={i} data={blog} />)}
+          {!data && (
+            <div className="flex flex-col items-center mt-16">
+              <ShieldOff />
+              <p className="text-center  text-lg col-span-12">No Record</p>
+            </div>
+          )}
         </div>
       </section>
     </div>
@@ -29,54 +38,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
-const datas = [
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-  {
-    img: ImgOne,
-    type: "NEWS",
-    created_date: "25-03-2025",
-    author: "Ar Kar Lin",
-    text: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution ",
-    des: "Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...",
-  },
-];

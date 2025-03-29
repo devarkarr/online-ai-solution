@@ -25,9 +25,6 @@ import { toast } from "sonner";
 import { ContactPayload } from "@/api/contact-us/interface";
 import { useContactUsMutation } from "@/api/contact-us/mutation";
 import { AxiosError } from "axios";
-import RatingModal from "./components/rating-modal";
-import { useState } from "react";
-// import sendEmail from "@/service/email";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -57,8 +54,6 @@ const countryOptions = countries.map((country) => ({
 }));
 
 const Contact = () => {
-  const [opened, setOpened] = useState(false);
-  const [userId, setUserId] = useState("");
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -84,8 +79,6 @@ const Contact = () => {
           },
         });
         form.reset();
-        setUserId(data._data.id);
-        setOpened((prev) => !prev);
       },
       onError: (error) => {
         const errMsg =
@@ -254,12 +247,6 @@ const Contact = () => {
             <img src={Logo} alt="" />
           </div>
         </div>
-        <RatingModal
-          userId={userId}
-          resetUserId={() => setUserId("")}
-          opened={opened}
-          close={() => setOpened(false)}
-        />
       </section>
     </div>
   );

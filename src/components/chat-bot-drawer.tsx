@@ -55,7 +55,7 @@ const ChatBotDrawer = ({ opened, close }: Props) => {
     <Sheet open={opened} onOpenChange={close}>
       <SheetContent className="h-[600px] mt-20 me-4 rounded-md">
         <SheetHeader>
-          <SheetTitle>Chat Bot of Ai Solution</SheetTitle>
+          <SheetTitle>Chat Bot</SheetTitle>
         </SheetHeader>
         <div className="h-full flex flex-col w-full">
           <div
@@ -66,10 +66,10 @@ const ChatBotDrawer = ({ opened, close }: Props) => {
           >
             {chatMessages.map((msg, i) => (
               <div key={i} className="w-full flex flex-col mt-3 space-y-2">
-                <p className="py-1.5 px-4 ms-auto text-sm rounded-3xl w-auto bg-[#6f59fd] text-white">
+                <p className="py-1.5 px-4 ms-auto text-sm rounded-lg w-auto bg-[#F48C06] text-white">
                   {msg}
                 </p>
-                <p className="py-1.5 px-4 me-auto text-sm rounded-3xl w-auto bg-gray-300  dark:bg-[#161617] ">
+                <p className="py-1.5 px-4 me-auto text-sm rounded-lg w-auto bg-gray-300  dark:bg-[#161617] ">
                   {messages[i]}
                 </p>
               </div>
@@ -84,7 +84,7 @@ const ChatBotDrawer = ({ opened, close }: Props) => {
               className="w-full bg-transparent border-0 ring-0 outline-0"
             />
             <button onClick={onSubmit}>
-              <Send color="#6f59fd" />
+              <Send color="#F48C06" />
             </button>
           </div>
         </div>

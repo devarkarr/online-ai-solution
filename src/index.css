@@ -84,36 +84,17 @@
   );
 }
 
-.gallery-bar {
-  background: rgb(247, 102, 128);
-  background: linear-gradient(
-    225deg,
-    rgba(247, 102, 128, 1) 0%,
-    rgba(87, 0, 123, 1) 100%
-  );
-}
-
-.read-more {
-  /* background: rgb(247,102,128); */
-  background: linear-gradient(
-    225deg,
-    rgba(247, 102, 128, 1) 0%,
-    rgba(87, 0, 123, 1) 100%
-  );
-  background-clip: text;
-  color: transparent;
-}
 
 .swiper-pagination .swiper-pagination-bullets .swiper-pagination-horizontal {
   top: 100px !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: light-dark(#6f6f6f, #ff93c9) !important;
+  background-color: light-dark(#6f6f6f, #F48C06) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #b93f7e !important;
+  background-color: #F48C06 !important;
 }
 
 .swiper {
@@ -121,17 +102,20 @@
 }
 .swiper-button-prev,
 .swiper-rtl .swiper-button-next {
-  top: -10rem !important;
+  top: -1rem !important;
+  height: 5px !important;
 }
 
 .swiper-button-next,
 .swiper-rtl .swiper-button-next {
-  top: -10rem !important;
+  top: -1rem !important;
+  height: 5px !important;
+
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #b93f7e !important;
+  color: #F48C06 !important;
 }
 .swiper_active {
   scale: 1.4;

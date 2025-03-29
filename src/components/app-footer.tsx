@@ -1,6 +1,6 @@
 import Logo from "@/assets/logo.svg";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+// import { Input } from "./ui/input";
+// import { Button } from "./ui/button";
 
 const AppFooter = () => {
   return (
@@ -15,7 +15,7 @@ const AppFooter = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center space-y-4 my-8">
+        {/* <div className="flex flex-col justify-center items-center space-y-4 my-8">
           <p>Subscribe to get our Newsletter</p>
           <div className="flex items-center gap-3">
             <Input
@@ -26,7 +26,7 @@ const AppFooter = () => {
               Subscribe
             </Button>
           </div>
-        </div>
+        </div> */}
         <div className="py-4 border-t">
           <ul className="flex items-center gap-3 text-xs justify-center mb-4">
             <li>Events</li>
