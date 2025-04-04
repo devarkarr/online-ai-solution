@@ -49,7 +49,7 @@ const CarouselCard = ({ rating }: { rating: RatingType }) => {
       <div className=" p-5 pb-0">
         <p className="text-lg sm:text-sm font-extralight">{rating.feedback}</p>
       </div>
-      <div className="flex justify-between items-center mt-4 border-t py-3  p-5 bg-gray-100">
+      <div className="flex justify-between items-center mt-4 border-t py-3  p-5 bg-gray-100 dark:bg-gray-950">
         <div className="flex items-center gap-3">
           <div className="size-10 rounded-full overflow-hidden">
             <img
